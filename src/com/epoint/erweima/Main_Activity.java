@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class Erweima_Main_Activity extends Activity implements OnClickListener {
+public class Main_Activity extends Activity implements OnClickListener {
 
 	public static final int REQUEST_CODE_CAPTURE = 1;
 
