@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/main_capture_ib"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="3dp"
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:contentDescription="@string/main_discription"
+            android:src="@drawable/erweima_selector" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/main_url_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minLines="5"
+        android:gravity="top|left"
+        android:hint="@string/main_url_hint"
+        android:padding="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:padding="3dp" >
+
+        <Button
+            android:id="@+id/main_clean_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/main_clean" />
+
+        <Button
+            android:id="@+id/main_load_url_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/main_load_url" />
+    </LinearLayout>
+
+</LinearLayout>

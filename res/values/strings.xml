@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">url测试</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="main_discription">二维码扫描</string>
+    <string name="main_url_hint">请输入url</string>
+    <string name="main_clean">清空</string>
+    <string name="main_load_url">加载url</string>
+
+    <string name="show_stretch">+</string>
+    <string name="show_shrink">-</string>
+</resources>
