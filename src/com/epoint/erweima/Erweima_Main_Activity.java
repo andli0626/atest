@@ -12,9 +12,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class Erweima_Main_Activity extends Activity implements OnClickListener {
-    
-    public static final int REQUEST_CODE_CAPTURE = 1;
-    
+
+	public static final int REQUEST_CODE_CAPTURE = 1;
+
 	private ImageButton main_capture_ib;
 	private EditText main_url_et;
 	private Button main_clean_btn;
@@ -42,40 +42,34 @@ public class Erweima_Main_Activity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.main_capture_ib:
-			startActivityForResult(new Intent(Erweima_Main_Activity.this, Erweima_Capture_Activity.class), REQUEST_CODE_CAPTURE);
 			break;
 		case R.id.main_clean_btn:
-		    main_url_et.setText("");
-		    setUrl("");
-		    break;
+			break;
 		case R.id.main_load_url_btn:
-		    Intent intent = new Intent(this, Erweima_Show_Activity.class);
-		    intent.putExtra("url", main_url_et.getText().toString());
-		    startActivity(intent);
-		    setUrl(main_url_et.getText().toString());
 		}
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    super.onActivityResult(requestCode, resultCode, data);
-	    if (requestCode == REQUEST_CODE_CAPTURE) {
-	        if (resultCode == RESULT_OK) {
-	            main_url_et.setText(data.getStringExtra("url") == null ? "" : data.getStringExtra("url"));
-	            setUrl(main_url_et.getText().toString());
-	        }
-	    }
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == REQUEST_CODE_CAPTURE) {
+			if (resultCode == RESULT_OK) {
+				main_url_et.setText(data.getStringExtra("url") == null ? ""
+						: data.getStringExtra("url"));
+				setUrl(main_url_et.getText().toString());
+			}
+		}
 	}
-	
-	private void setUrl(String url){
-        SharedPreferences sp = getSharedPreferences("urldata", MODE_PRIVATE);
-        Editor editor = sp.edit();
-        editor.putString("url", url);
-        editor.commit();
-    }
-	
+
+	private void setUrl(String url) {
+		SharedPreferences sp = getSharedPreferences("urldata", MODE_PRIVATE);
+		Editor editor = sp.edit();
+		editor.putString("url", url);
+		editor.commit();
+	}
+
 	private String getUrl() {
-        SharedPreferences sp = getSharedPreferences("urldata", MODE_PRIVATE);
-        return sp.getString("url", "");
+		SharedPreferences sp = getSharedPreferences("urldata", MODE_PRIVATE);
+		return sp.getString("url", "");
 	}
 }
